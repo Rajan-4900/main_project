@@ -1,0 +1,81 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main */
+main {
+    padding: 20px 10px;
+}
+
+/* Table Container */
+table {
+    width: 50%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background: #7495f7;
+    color: #fff;
+    text-align: left;
+    padding: 12px 16px;
+    width: 30%;
+}
+
+/* Table Data */
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Last Row Border Fix */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Update Button */
+a {
+    text-decoration: none;
+    background: #1cc88a;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    background: #17a673;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    background: #2c2c2c;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+}
