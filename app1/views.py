@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .models import Teachers
+from django.contrib import messages
 
 
 def app1(request):
@@ -40,7 +41,7 @@ def regsiter(request):
         # print("callagename",callagename)
         # print("id:",id)
         # print("gender:",gender)   
-        return redirect("/") 
+        return redirect("/karthik/app2/login.html") 
     return render(request,'teachers_register.html')
 
 def update(request,id):
@@ -60,3 +61,19 @@ def update(request,id):
         return redirect("Teachers.html") 
     return render(request,'update.html',{'teachers':stu_obj})
     
+def login(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        Password = request.POST.get('Password')
+
+        try:
+            teacher = Teachers.objects.get(name=name, Password=Password)
+            request.session['teacher_name'] = teacher.name
+            messages.success(request, f"Welcome {teacher.name}!")
+            return redirect('/karthik/app2') 
+         
+        except Teachers.DoesNotExist:
+            messages.error(request,"Invalid name or password")
+            return redirect('/karthik/app2/login.html')  # back to login page
+
+    return render(request, 'login.html')
